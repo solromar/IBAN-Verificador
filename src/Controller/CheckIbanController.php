@@ -12,23 +12,36 @@ class CheckIbanController extends AbstractController
      * @Route("/check/iban", name="app_check_iban")
      */
     public function verificador(): Response
-{
-    // Valor a validar
-    $value = 'ES1615632626393269706934';
+    {
+        // Valor a validar
+        $value = 'ES4630048892115357624914';
+        //ES6520388565649243971983
+        //ES2331905938184182482381
+        //ES3830041121893353893756
+        //ES5201286619264338842666
+        //ES3400811785311628498698
+        //ES8204872266365621671132
+        //ES0920955743412735282868
+        //ES9621002667772917922717
+        //ES3930048983232977378127
+        //ES2220802661045125766342
+        //ES3401284971747896228191
+        //ES4000811519331235975199
+        //SK0791444421148986799394  ESLOVENIA
 
-    // Llamada a la función de validación del IBAN
-    $resultadoIban = $this->checkIBAN($value);
+        // Llamada a la función de validación del IBAN
+        $resultadoIban = $this->checkIBAN($value);
 
-   
-    // Crear el contenido de la respuesta
-    $contenidoRespuesta = "IBAN: " . $resultadoIban;
 
-    // Crear la respuesta HTTP con el contenido deseado
-    $response = new Response($contenidoRespuesta);
-    $response->headers->set('Content-Type', 'text/plain');
+        // Crear el contenido de la respuesta
+        $contenidoRespuesta = "IBAN: " . $resultadoIban;
 
-    return $response;
-}
+        // Crear la respuesta HTTP con el contenido deseado
+        $response = new Response($contenidoRespuesta);
+        $response->headers->set('Content-Type', 'text/plain');
+
+        return $response;
+    }
 
 
     // -------------------- Verifica que el IBAN sea correcto ------------------------------------------- //
